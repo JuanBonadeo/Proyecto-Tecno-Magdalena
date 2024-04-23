@@ -1,0 +1,11 @@
+.App{
+  margin: 0 auto;
+  padding: 0;
+  font-family: 'Barlow', sans-serif;
+  background-color: #000000;
+}
+
+.contain{
+  margin-top: 4.9em;
+  background-color: #000000;
+}

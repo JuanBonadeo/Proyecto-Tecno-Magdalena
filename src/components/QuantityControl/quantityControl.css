@@ -1,0 +1,16 @@
+.select {
+    display: flex;
+  }
+  
+  .select select {
+    background-color: transparent; 
+    border: 1px solid #7f00ed; 
+    color: #ffffff; 
+    padding: 0.25rem; 
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+
+ 
+  
