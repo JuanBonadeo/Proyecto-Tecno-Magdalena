@@ -27,6 +27,7 @@ function Header() {
           <Nav className="me-auto navLinks" onSelect={closeNavbar}>
             <Link to="/" className="primary bold" onClick={closeNavbar}>Inicio</Link>
             <div className="dropdownContainer">
+              <Link to="/categoria/tecnologia/" className="primary mobile" onClick={closeNavbar}>Tecnologia</Link>
               <NavDropdown className='Dropdown'>
                 <Link to='/categoria/tecnologia/subcategoria/iluminacion'><span>Iluminacion</span></Link>
                 <Link to='/categoria/tecnologia/subcategoria/auriculares'><span>Auriculares</span></Link>
@@ -38,9 +39,10 @@ function Header() {
                 <Link to='/categoria/tecnologia/subcategoria/electronica'><span>Electronica</span></Link>
                 <Link to='/categoria/tecnologia/subcategoria/gaming'><span>Gaming</span></Link>
               </NavDropdown>
-              <Link to="/categoria/tecnologia/" className="primary" onClick={closeNavbar}>Tecnologia</Link>
+              <Link to="/categoria/tecnologia/" className="primary desktop" onClick={closeNavbar}>Tecnologia</Link>
             </div>
             <div className='dropdownContainer'>
+              <Link to="/categoria/bazar/" className="primary mobile" onClick={closeNavbar}>Bazar</Link>
               <NavDropdown className='Dropdown'>
                 <Link to='/categoria/bazar/subcategoria/termos'><span>Termos</span></Link>
                 <Link to='/categoria/bazar/subcategoria/bolsos'><span>Bolsos y Mochilas</span></Link>
@@ -48,24 +50,26 @@ function Header() {
                 <Link to='/categoria/bazar/subcategoria/setmateros'><span>Set Materos</span></Link>
                 <Link to='/categoria/bazar/subcategoria/pavas'><span>Pavas</span></Link>
               </NavDropdown>
-              <Link to="/categoria/bazar/" className="primary" onClick={closeNavbar}>Bazar</Link>
+              <Link to="/categoria/bazar/" className="primary desktop" onClick={closeNavbar}>Bazar</Link>
             </div>
             <div className='dropdownContainer'>
+              <Link to="/categoria/articulos/" className="primary mobile" onClick={closeNavbar}>Articulos</Link>
               <NavDropdown className='Dropdown'>
                 <Link to='/categoria/articulos/subcategoria/perfumeria&belleza'><span>Perfumeria & Belleza</span></Link>
                 <Link to="/categoria/articulos/subcategoria/jugueteria"><span>Jugueteria</span></Link>
                 <Link to="/categoria/articulos/subcategoria/marroquineria"><span>Marroquineria</span></Link>
               </NavDropdown>
-              <Link to="/categoria/articulos/" className="primary" onClick={closeNavbar}>Articulos</Link>
+              <Link to="/categoria/articulos/" className="primary desktop" onClick={closeNavbar}>Articulos</Link>
             </div>
             <div className='dropdownContainer'>
+              <Link to="/categoria/ferreteria" className="primary mobile" onClick={closeNavbar}>Ferreteria</Link>
               <NavDropdown className='Dropdown'>
                 <Link to='/categoria/ferreteria/subcategoria/herramientas'><span>Herramientas</span></Link>
                 <Link to="/categoria/ferreteria/subcategoria/pilas" className="primary"><span>Pilas</span></Link>
                 <Link to="/categoria/ferretria/subcategoria/pegamentos" className="primary"><span>Pegamentos</span></Link>
                 
               </NavDropdown>
-              <Link to="/categoria/ferreteria" className="primary" onClick={closeNavbar}>Ferreteria</Link>
+              <Link to="/categoria/ferreteria" className="primary desktop" onClick={closeNavbar}>Ferreteria</Link>
             </div>
             <div className='dropdownContainer'>
               <Link to="/categoria/indumentaria" className="primary" onClick={closeNavbar}>Indumentaria</Link>

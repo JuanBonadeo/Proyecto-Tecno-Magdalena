@@ -2,7 +2,7 @@
 .navBar{
     background-color: #000000;
     margin: 0;
-    border-bottom: solid .01px #dd00ff;
+    border-bottom: solid .01px #9d00ff;
 }
 .mobileContainerNav .title{
     font-size: 2em;
@@ -10,7 +10,7 @@
 .navLinks{
     display: flex;
     gap: 20px;
-    color: #dd00ff;
+    color: #9d00ff;
 }
 .navLinks a{
     text-decoration: none;
@@ -19,7 +19,7 @@
     scale: 1.1;
     transition: .3s;
     border: none;
-    color: #dd00ff;
+    color: #9d00ff;
 }.sape{
     border: none;
 
@@ -70,9 +70,12 @@
     padding: 0;
 }
 .dropdown-menu a:hover{
-    background-color: #dd00ff;
+    background-color: #9d00ff;
     scale: 1.025;
     color: #000000;
+}
+.mobile{
+    display: none;
 }
 
 
@@ -96,7 +99,22 @@
     .navLinks a{
         margin: 0 auto;
     }
-    .dropdown{
+    .navbar-nar{
+        display: none;
+    }.dropdownContainer{
+        gap: .3em;
+        width: min-content;
+        align-items: center;
+        justify-content: center;
+        
+        
+    }.dropdownContainer div{
+        margin: 0;
+    }
+    .mobile{
+        display: block;
+    }
+    .desktop{
         display: none;
     }
 

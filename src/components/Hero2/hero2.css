@@ -18,8 +18,6 @@
     width: 35%;
     object-fit: contain;
     background-color: #ffffff;
-    border-top-left-radius: 25%;
-    border-bottom-right-radius: 25%;
 }
 .CombosContainer h2{
     font-size: 2em;
