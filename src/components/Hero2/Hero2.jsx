@@ -13,7 +13,7 @@ import '../Hero2/hero2.css';
       transition={{ duration: 4, delay: 1,type:"spring", stiffness: 160, damping: 20}}
     >
       <div className="info">
-        <h2>¡Tu Termo Stanley Adventure te Espera para tu Próxima Aventura!</h2>
+        <h2>Disfrutá de viajes familiares inolvidables con el termo Stanley Adventure To-Go</h2>
         <p>
         Al planificar una escapada con la familia, cada detalle cuenta para hacer la experiencia lo más placentera posible. Entre snacks, juegos para el camino y el itinerario perfecto, hay un elemento que no debe faltar: el termo Stanley Adventure.
         </p>

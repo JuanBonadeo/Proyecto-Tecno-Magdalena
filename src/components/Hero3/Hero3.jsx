@@ -37,12 +37,12 @@ import { Link } from 'react-router-dom';
         </Link>
         <h3 >Ferreteria</h3>
       </div>
-      <div className="categoria">
+      {/* <div className="categoria">
         <Link to='/categoria/articulos/perfumeria'>
         <img src='https://firebasestorage.googleapis.com/v0/b/tecnomagdalena-4007d.appspot.com/o/perfume.jpg?alt=media&token=1c89c3fe-de82-4e53-9e0e-1426d2bd8241' className='imgCategory'></img>
         </Link>
         <h3 >Perfumeria</h3>
-      </div>  
+      </div>   */}
       <div className="categoria">
         <Link to='/categoria/tecnologia/subcategoria/parlantes'>
         <img src='https://firebasestorage.googleapis.com/v0/b/tecnomagdalena-4007d.appspot.com/o/parlante.jpg?alt=media&token=7f1bb126-3318-4a53-9dec-8056a1d417bb' className='imgCategory'></img>
