@@ -87,6 +87,9 @@
 .price{
     margin-top: 1em;
     color: #ffffff;
+}.prices{
+    margin-top: 1em;
+    color: #ffffff;
 }
 .delete{
     cursor: pointer;

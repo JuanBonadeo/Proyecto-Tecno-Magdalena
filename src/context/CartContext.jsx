@@ -36,7 +36,7 @@ export const CartProvider = ({ children }) => {
     if (existingProductIndex !== -1) {
       // Si el producto ya está en el carrito, actualizar la cantidad si es menor que 10
       const updatedCart = cart.map((prod, index) => {
-        if (index === existingProductIndex && prod.quantity < 10) {
+        if (index === existingProductIndex && prod.quantity < 30) {
           return {
             ...prod,
             quantity: prod.quantity + 1
@@ -73,7 +73,7 @@ export const CartProvider = ({ children }) => {
 
   const updateQuantity = (id, addedQuantity) => {
     const updatedCart = cart.map(prod => {
-      if (prod.id === id && prod.quantity + addedQuantity <= 10) {
+      if (prod.id === id && prod.quantity + addedQuantity <= 30) {
         const newQuantity = prod.quantity + addedQuantity;
         if (newQuantity <= 0) {
           Toast.fire({
@@ -95,7 +95,7 @@ export const CartProvider = ({ children }) => {
   }
   const updateQuantitySelect = (id, newQuantity) => {
     const updatedCart = cart.map(prod => {
-      if (prod.id === id && newQuantity <= 10) {
+      if (prod.id === id && newQuantity <= 30) {
         return {
           ...prod,
           quantity: newQuantity
@@ -135,9 +135,13 @@ export const CartProvider = ({ children }) => {
 
   const getTotal = () => {
     let total = 0
-
+    let totP = 0
     cart.forEach(prod => {
-      let totP = (prod.precio - (prod.precio * prod.descuento / 100)) * prod.quantity
+      if (prod.quantity >= 20) {
+        totP = (prod.precio * prod.quantity) * 0.8
+      } else {
+        totP = (prod.precio - (prod.precio * prod.descuento / 100)) * prod.quantity
+      }
       total += totP
     })
 

@@ -29,11 +29,10 @@ export default function ProductCard({nombre,img1,precio,id, descuento = 0, stock
         <div className="cardInfo">
           <div className="namePrice">
             <h4>{nombre}</h4>
-            <div className="prices">
-              <span className='price'>{formatearMoneda(precio)}</span>
+            <div>
+              <span >{formatearMoneda(precio)}</span>
               <span className='discountedPrice'>{nuevoPrecio}</span>
             </div>
-              <span>x20 uni:{formatearMoneda(precioMayorista)}</span>
           </div>
           
           <AddToCartIcon onAdd={handleOnAdd}/>
@@ -54,7 +53,6 @@ export default function ProductCard({nombre,img1,precio,id, descuento = 0, stock
           <span>{formatearMoneda(precio)}</span>
           
         </div>
-          <span>x20 uni:{formatearMoneda(precioMayorista)}</span>
         <AddToCartIcon onAdd={handleOnAdd}/>
       </div>
       <span className='outOfStockBadge'>Sin Stock</span>
@@ -72,7 +70,6 @@ return (
         <span>{formatearMoneda(precio)}</span>
         
       </div>
-        <span>x20 uni:{formatearMoneda(precioMayorista)}</span>
       <AddToCartIcon onAdd={handleOnAdd}/>
     </div>
   </div>
