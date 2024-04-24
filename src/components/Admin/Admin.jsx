@@ -127,7 +127,6 @@ export const Admin = () => {
                         <option value="articulos">Articulos</option>
                         <option value="ferreteria">Ferreteria</option>
                         <option value="indumentaria">Indumentaria</option>
-                        <option value="jugueteria">Jugueteria</option>
                     </select>
                 </div>
                 <div className="form-group">
@@ -139,16 +138,26 @@ export const Admin = () => {
                             <option value="cargadores">cargadores</option>
                             <option value="parlantes">parlantes</option>
                             <option value="relojes">relojes</option>
+                            <option value="cables">cables</option>
+                            <option value="computacion">computacion</option>
+                            <option value="electronica">electronica</option>
+                            <option value="gaming">gaming</option>
                             </>}
                         {category === 'bazar' && <>
                             <option value="bolsos">bolsos</option>
                             <option value="canastos">canastos</option>
                             <option value="setmateros">setmateros</option>
                             <option value="termos">termos</option></>}
+                            <option value="pavas">pavas</option>
                         {category === 'articulos' && <>
-                            <option value="perfumeria">Perfumeria</option>
-                            <option value="pavas">Pavas</option>
+                            <option value="perfumeria&belleza">Perfumeria & Belleza</option>
+                            <option value="jugueteria">jugueteria</option>
                         </>}
+                        {category === 'ferreteria' && <>
+                            <option value="herramientas">herramientas</option>
+                            <option value="pilas">pilas</option>
+                            <option value="pegamentos">pegamentos</option>
+                            </>}
                     </select>
                 </div>
                 <label htmlFor="imagen">Imagen 1:</label>
