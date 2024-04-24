@@ -137,7 +137,9 @@ export const Admin = () => {
                             <option value="iluminacion">iluminacion</option>
                             <option value="auriculares">auriculares</option>
                             <option value="cargadores">cargadores</option>
-                            <option value="parlantes">parlantes</option></>}
+                            <option value="parlantes">parlantes</option>
+                            <option value="relojes">relojes</option>
+                            </>}
                         {category === 'bazar' && <>
                             <option value="bolsos">bolsos</option>
                             <option value="canastos">canastos</option>
@@ -145,6 +147,7 @@ export const Admin = () => {
                             <option value="termos">termos</option></>}
                         {category === 'articulos' && <>
                             <option value="perfumeria">Perfumeria</option>
+                            <option value="pavas">Pavas</option>
                         </>}
                     </select>
                 </div>

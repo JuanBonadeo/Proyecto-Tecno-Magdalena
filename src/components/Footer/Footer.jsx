@@ -21,12 +21,12 @@ const Footer = () => {
                 <Logo className='logo light' />
             </div>
             <div className='footer2'>
-                <a href='https://www.instagram.com/cebate_unmate'><InstagramIcon/></a>
+                <a href='https://www.instagram.com/tegno_magdalena'><InstagramIcon/></a>
                 <a><FacebookIcon/></a>
                 <a href='https://github.com/JuanBonadeo'><GitHubIcon/></a>
                 <a><LinkedInIcon/></a>
             </div>
-            <h5>©Import Vapes Copyright  todos los derechos reservados</h5>
+            <h5>©Tecno Magdalena Copyright  todos los derechos reservados</h5>
             <h5>Develop by:   <a>JuanBonadeo</a></h5>
 
             

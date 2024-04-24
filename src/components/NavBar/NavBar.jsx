@@ -32,6 +32,7 @@ function Header() {
                 <Link to='/categoria/tecnologia/subcategoria/auriculares'><span>Auriculares</span></Link>
                 <Link to='/categoria/tecnologia/subcategoria/cargadores'><span>Cargadores</span></Link>
                 <Link to='/categoria/tecnologia/subcategoria/parlantes'><span>Parlantes</span></Link>
+                <Link to='/categoria/tecnologia/subcategoria/relojes'><span>Relojes</span></Link>
               </NavDropdown>
               <Link to="/categoria/tecnologia/" className="primary" onClick={closeNavbar}>Tecnologia</Link>
             </div>
@@ -47,6 +48,7 @@ function Header() {
             <div className='dropdownContainer'>
               <NavDropdown className='Dropdown'>
                 <Link to='/categoria/articulos/subcategoria/perfumeria'><span>Perfumeria</span></Link>
+                <Link to='/categoria/articulos/subcategoria/pavas'><span>Pavas</span></Link>
               </NavDropdown>
               <Link to="/categoria/articulos/" className="primary" onClick={closeNavbar}>Articulos</Link>
             </div>

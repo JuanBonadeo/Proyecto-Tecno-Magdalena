@@ -14,12 +14,17 @@
     width: 50%;
 }
 .CombosContainer img{
-    width: 45%;
-    height: 50%;
+    margin: 0 auto;
+    width: 35%;
+    object-fit: contain;
+    background-color: #ffffff;
+    border-top-left-radius: 25%;
+    border-bottom-right-radius: 25%;
 }
 .CombosContainer h2{
     font-size: 2em;
     text-align: left;
+    margin-bottom: .5em;
 }
 @media screen and (max-width: 768px){
     .CombosContainer{
