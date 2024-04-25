@@ -117,6 +117,9 @@
     .desktop{
         display: none;
     }
+    .navbar-toggler-icon{
+        color: #ffffff;
+    }
 
 }
 
