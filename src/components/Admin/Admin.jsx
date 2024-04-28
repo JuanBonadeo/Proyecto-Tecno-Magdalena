@@ -1,10 +1,11 @@
 import React from 'react'
 import './Admin.css'
 import { useState, useEffect } from 'react'
-import { collection, addDoc, setDoc, doc } from 'firebase/firestore'
+import { collection, addDoc, setDoc, doc, getDoc } from 'firebase/firestore'
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { db, storage } from '../../services/firebase/firebaseConfig'
 import Swal from 'sweetalert2';
+import {v4} from 'uuid';
 
 
 export const Admin = () => {
@@ -40,21 +41,37 @@ export const Admin = () => {
 
     const addProduct = async (e) => {
         e.preventDefault();
-        const productFolderRef = ref(storage, `products/${category}/${nombre}`);
-
-        let imageUrl1 = '';
-        if (image1) {
-            const image1Ref = ref(productFolderRef, image1.name);
-            await uploadBytesResumable(image1Ref, image1);
-            imageUrl1 = await getDownloadURL(image1Ref);
-        }
-
         const precio = parseInt(document.getElementById('precio').value);
         const descuento = parseInt(document.getElementById('descuento').value);
         const stock = document.getElementById('stock').checked;
         const descripcion = document.getElementById('descripcion').value;
         const img1 = document.getElementById('img1').value;
         const nombreProducto = nombre.toUpperCase().replace(/\s+/g, '-');
+        // valido que no exista un producto con el mismo nombre
+        const productQuery = await getDoc(doc(db, 'products', nombreProducto));
+        if (productQuery.exists()) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error al agregar producto',
+                text: 'Ya existe un producto con el mismo nombre',
+                showConfirmButton: false,
+                timer: 1500
+            });
+            return;
+        }
+
+        // Crear una referencia a la carpeta de productos
+        const productFolderRef = ref(storage, `products/${category}/${nombre}`);
+        // Subir la imagen 1
+        let imageUrl1 = '';
+        if (image1) {
+            const image1Ref = ref(productFolderRef, image1.name);
+            await uploadBytesResumable(image1Ref, image1);
+            imageUrl1 = await getDownloadURL(image1Ref);
+            
+        }
+
+        
         const nuevoProducto = {
             nombre: nombre,
             precio: precio,
@@ -65,7 +82,8 @@ export const Admin = () => {
             descripcion: descripcion,
             img1: imageUrl1,
         }
-        // Replace 'your-desired-id' with the desired ID for the document
+        
+        // Guqardar el producto en la base de datos con el id del doc = al nombre del producto
         const productRef = doc(db, 'products', nombreProducto);
         setDoc(productRef, nuevoProducto)
 

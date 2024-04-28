@@ -44,15 +44,14 @@ footer h5{
     padding-bottom: 1em;
     color: #212121;
 }
-.footer2 svg{
+.footer2 svg, .footer2 img{
     width: 30px;
     height: 30px;
     color: #ffffff;
     cursor: pointer;
-}.footer2 svg:hover{
-    scale: 1.1;
+}
+.footer2 svg:hover, .footer2 img:hover{
     transition: .3s;
-    color: #7f00ed;
 }
 .light{
     height: 100px;
