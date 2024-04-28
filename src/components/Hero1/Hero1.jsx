@@ -9,7 +9,7 @@ const Hero1 = () => {
       <Carousel.Item className='Hero1Container'>
         <img
           className="imgHero1"
-          src='https://firebasestorage.googleapis.com/v0/b/tecnomagdalena-4007d.appspot.com/o/portadas%2Fhero1.jpg?alt=media&token=0fab9fd0-ebdd-409c-a4ba-6ba0fc7b47eb'
+          src='https://firebasestorage.googleapis.com/v0/b/tecnomagdalena-4007d.appspot.com/o/portadas%2Fhero1.jpg?alt=media&token=c405f9f7-dbb5-4896-b4dd-638f833013cd'
           alt="First-slide"
         />
         <Carousel.Caption className='HeroCaption hero12'>

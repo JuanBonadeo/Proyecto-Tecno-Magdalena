@@ -68,12 +68,12 @@ export default function ProductInfo({ id, nombre, precio, img1, img2, img3, desc
           <div className="infoPayment">
             <h5>Metodos de Pago:</h5>
             <div className="paymentMethods">
-              <div className="paymentItem"><CreditCardIcon /><span>Debito</span></div>
+              <div className="paymentItem"><CreditCardIcon /><span>Debito / Credito</span></div>
               <div className="paymentItem"><AccountBalanceIcon /><span>Transf. Bancaria</span></div>
               <div className="paymentItem"><LocalAtmIcon /><span>Efectivo</span></div>
             </div>
           </div>
-          <div className="envios"><h5>Envios a Todo el Pais </h5><LocalShippingIcon /></div>
+          <div className="envios"><h5>Envios a Todo el Pais, con cualquier medio de transporte</h5><LocalShippingIcon /></div>
         </motion.div>
         <motion.div
           initial={{ opacity: 0 }}

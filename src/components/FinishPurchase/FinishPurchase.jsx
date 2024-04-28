@@ -23,7 +23,7 @@ const FinishPurchase = () => {
         const selectedOption = event.target.value;
         setEntrega(selectedOption);
         if (selectedOption === 'envio') {
-            setTotalFinal(total + precioEnvio);
+            setTotalFinal(total );
         } else {
             setTotalFinal(total);
         }
@@ -49,17 +49,15 @@ const FinishPurchase = () => {
                 mensajePedido += 'Metodo de Entrega: ' + entrega + '\n';
                 if (entrega === 'envio') {
                     mensajePedido += 'Domicilio: ' + domicilio + '\n';
-                    mensajePedido += 'Costo de envio: ' + formatearMoneda(precioEnvio) + ' (envio gratis a partir de 30000)\n';
-                    totalFinal = total + precioEnvio;
+                    mensajePedido += 'Costo de envio:  consultar '  + ' (envio gratis a partir de 30000)\n';
+                    totalFinal = total + ' coste de envio';
                 }
                 mensajePedido += 'pedido:\n';
                 cart.forEach((prod) => {
                     mensajePedido += `*${prod.nombre}*  Cantidad: *${prod.quantity}* Precio: *${calcularDescuento(prod.precio * prod.quantity, prod.descuento)}*\n`;
                 });
-                if (entrega === 'envio' && total >= precioEnvioGratis) {
-                    mensajePedido += `\nTotal Con envio gratis: *${formatearMoneda(total)}*`;
-                } else if (entrega === 'envio' && total < precioEnvioGratis) {
-                    mensajePedido += `\nTotal con ${precioEnvio} de envio: *${formatearMoneda(totalFinal)}*`;
+                 if (entrega === 'envio' && total ) {
+                    mensajePedido += `\nTotal sin coste de envio: *${formatearMoneda(total)}*`;
                 } else mensajePedido += `\nTotal: *${formatearMoneda(total)}*`;
 
                 // Completar con el número de WhatsApp
@@ -122,9 +120,9 @@ const FinishPurchase = () => {
                     </div>
                 </div>
 
-                <h4>Total: {`${formatearMoneda(total)} ${entrega === 'envio' && total >= precioEnvioGratis ? ' envio gratis' : ''}
-                 ${entrega === 'envio' && total < precioEnvioGratis ? '+ ' + formatearMoneda(precioEnvio) + ' de envio' : ''}`}</h4>
-                {entrega === 'envio' && total < precioEnvioGratis && <h5>Envío gratis a partir de {formatearMoneda(precioEnvioGratis)}.</h5>}
+                <h4>Total: {`${formatearMoneda(total)} ${entrega === 'envio'  ? ` + coste de envio` : ''}`}
+                 </h4>
+            
                 <button className="Button" type='submit'>Comprar</button>
             </form>
         </div>
