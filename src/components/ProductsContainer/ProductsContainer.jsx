@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { collection, getDocs, where, query, startAfter, limit } from 'firebase/firestore';
-import { useParams, useLocation, useHistory } from 'react-router-dom'; // Agregado useHistory
+import { useParams, useLocation, useNavigate} from 'react-router-dom'; // Importamos useLocation
 import './productsContainer.css';
 import { db } from '../../services/firebase/firebaseConfig';
 import ProductList from './ProductList';
@@ -21,7 +21,7 @@ export default function ProductsContainer() {
   const [lastDocs, setLastDocs] = useState({});
   const [hasNextPage, setHasNextPage] = useState(false);
   const pageSize = 12;
-  const history = useHistory(); // Obtener el objeto history
+  const navigate = useNavigate(); // Usamos useNavigate en lugar de useHistory
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -39,23 +39,23 @@ export default function ProductsContainer() {
 
       let queryRef = productsRef;
       if (pageNumber > 1 && lastDocs[pageNumber - 1]) {
-        queryRef = query(productsRef, startAfter(lastDocs[pageNumber - 1]), limit(pageSize));
+        queryRef = query(productsRef, startAfter(lastDocs[pageNumber - 1]), limit(pageSize + 1));
       } else {
-        queryRef = query(productsRef, limit(pageSize));
+        queryRef = query(productsRef, limit(pageSize + 1));
       }
 
       const snapShot = await getDocs(queryRef);
-      const productosAdapted = snapShot.docs.map((doc) => ({
+      const productosAdapted = snapShot.docs.slice(0, pageSize).map((doc) => ({
         id: doc.id,
         ...doc.data(),
       }));
 
       setLastDocs((prevLastDocs) => ({
         ...prevLastDocs,
-        [pageNumber]: snapShot.docs[snapShot.docs.length - 1],
+        [pageNumber]: snapShot.docs[snapShot.docs.length - 2],
       }));
 
-      setHasNextPage(snapShot.docs.length === pageSize);
+      setHasNextPage(snapShot.docs.length > pageSize);
       setProducts(productosAdapted);
     } catch (error) {
       console.error(error);
@@ -65,6 +65,7 @@ export default function ProductsContainer() {
   };
 
   useEffect(() => {
+    setProducts([]);
     setLastDocs({});
     fetchProducts(page);
   }, [categoriaId, subcategoriaId, page]);
@@ -76,7 +77,7 @@ export default function ProductsContainer() {
   const handlePageChange = (newPage) => {
     const params = new URLSearchParams(location.search);
     params.set('page', newPage.toString());
-    history.push({ search: params.toString() }); // Actualizar la URL con la nueva página
+    navigate(`${location.pathname}?${params.toString()}`); // Navegamos a la nueva página con useNavigate
   };
 
   if (loading) {
@@ -111,8 +112,8 @@ export default function ProductsContainer() {
       <Pagination
         hasNextPage={hasNextPage}
         hasPrevPage={page > 1}
-        onPageChange={handlePageChange} // Pasar la función de cambio de página
-        currentPage={page} // Pasar la página actual
+        onPageChange={handlePageChange}
+        currentPage={page}
       />
     </>
   );
