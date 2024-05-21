@@ -10,7 +10,7 @@ import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import { CartContext } from '../../context/CartContext';
 import { motion } from 'framer-motion';
 import AddToCartIcon from '../AddtoCartBtn.js/AddToCartBtn';
-import ColorPicker from '../ColorPicker/ColorPicker';
+
 
 
 

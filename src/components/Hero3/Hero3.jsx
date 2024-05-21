@@ -35,7 +35,7 @@ export const Hero3 = () => {
       link: '/categoria/tecnologia/subcategoria/pavas',
       imagen: 'https://firebasestorage.googleapis.com/v0/b/tecnomagdalena-4007d.appspot.com/o/pava.jpg?alt=media&token=6152fbbd-b799-47d8-9e9c-fd7e19f30dad',
       nombre: 'Pavas'
-    },
+    }, 
     {
       link: '/categoria/bazar/subcategoria/termos',
       imagen: 'https://firebasestorage.googleapis.com/v0/b/tecnomagdalena-4007d.appspot.com/o/combo.jpg?alt=media&token=6fa53a5b-198f-4ff3-a4a7-0dc3b46f7450',
